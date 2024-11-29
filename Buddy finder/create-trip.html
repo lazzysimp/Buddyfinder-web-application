@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Trip - Travel Buddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_ct.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">TravelBuddy</div>
+        <div class="nav-links">
+            <a href="home.html" class="nav-btn">Home</a>
+            <a href="profile.html" class="nav-btn">Profile</a>
+            <a href="create-trip.html" class="nav-btn active">Create Trip</a>
+        </div>
+    </header>
+
+    <!-- Create Trip Form Section -->
+    <div class="create-trip-container">
+        <h1>Create Your Travel Plan</h1>
+        <form class="trip-form" id="create-trip-form">
+            <label for="tripTitle">Trip Title</label>
+            <input type="text" id="tripTitle" name="tripTitle" placeholder="Enter your trip title" required>
+
+            <label for="tripDescription">Trip Description</label>
+            <textarea id="tripDescription" name="tripDescription" placeholder="Describe your trip in detail..." rows="6" required></textarea>
+
+            <label for="tripLocation">Location</label>
+            <input type="text" id="tripLocation" name="tripLocation" placeholder="Where are you traveling?" required>
+
+            <label for="tripDate">Trip Date</label>
+            <input type="date" id="tripDate" name="tripDate" required>
+
+            <label for="tripInterests">Interests</label>
+            <select id="tripInterests" name="tripInterests" required>
+                <option value="adventure">Adventure</option>
+                <option value="culture">Culture</option>
+                <option value="beach">Beach</option>
+                <option value="nature">Nature</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Create Trip</button>
+        </form>
+    </div>
+
+    <!-- Button to Index Page -->
+    <div class="redirect-button-container">
+        <a href="index.html">
+            <button class="redirect-btn">Go to Homepage</button>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="copyright-section">
+            <p>&copy; 2024 TravelBuddy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Travel Buddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">TravelBuddy</div>
+        <div class="nav-links">
+            <a href="home.html" class="nav-btn active">Home</a>
+            <a href="profile.html" class="nav-btn">Profile</a>
+            <a href="create-trip.html" class="nav-btn">Create Trip</a>
+        </div>
+    </header>
+
+    <!-- Upcoming Trips Section -->
+    <div class="upcoming-trips">
+        <h2>Upcoming Trips</h2>
+        <div id="upcoming-trips-list">
+            <!-- Trips will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Button to Index Page -->
+    <div class="redirect-button-container">
+        <a href="index.html">
+            <button class="redirect-btn">Go to Homepage</button>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="copyright-section">
+            <p>&copy; 2024 TravelBuddy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Load trips from localStorage and display them
+        window.onload = function() {
+            const trips = JSON.parse(localStorage.getItem('trips')) || [];
+            const tripsList = document.getElementById('upcoming-trips-list');
+
+            if (trips.length === 0) {
+                tripsList.innerHTML = '<p>No upcoming trips.</p>';
+            } else {
+                trips.forEach(trip => {
+                    const tripElement = document.createElement('div');
+                    tripElement.classList.add('trip-item');
+                    tripElement.innerHTML = `
+                        <h3>${trip.title}</h3>
+                        <p><strong>Location:</strong> ${trip.location}</p>
+                        <p><strong>Date:</strong> ${trip.date}</p>
+                        <p><strong>Description:</strong> ${trip.description}</p>
+                        <p><strong>Interests:</strong> ${trip.interests}</p>
+                    `;
+                    tripsList.appendChild(tripElement);
+                });
+            }
+        };
+    </script>
+</body>
+</html>
